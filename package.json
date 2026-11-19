@@ -1,0 +1,50 @@
+{
+  "name": "auto-code-explain",
+  "displayName": "自动代码解释",
+  "description": "在 VS Code 中选中代码后，自动在侧边栏显示中文解释。",
+  "version": "0.2.0",
+  "publisher": "local-dev",
+  "private": true,
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": ["Education", "Other"],
+  "main": "./dist/extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "autoCodeExplain.toggle",
+        "title": "开启或暂停自动解释",
+        "category": "代码解释"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "autoCodeExplain",
+          "title": "代码解释",
+          "icon": "media/explain.svg"
+        }
+      ]
+    },
+    "views": {
+      "autoCodeExplain": [
+        {
+          "id": "autoCodeExplain.explanation",
+          "name": "自动代码解释",
+          "type": "webview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "vscode:prepublish": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "1.100.0",
+    "typescript": "~5.9.3"
+  }
+}

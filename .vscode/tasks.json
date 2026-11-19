@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "编译自动代码解释扩展",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/node_modules/typescript/bin/tsc", "-p", "${workspaceFolder}"],
+      "group": "build",
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}
